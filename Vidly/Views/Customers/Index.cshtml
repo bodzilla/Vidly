@@ -21,7 +21,7 @@ else
         {
             <tr>
                 <th style="padding: 10px">@customer.Id</th>
-                <th style="padding: 10px">@customer.Name</th>
+                <th style="padding: 10px">@Html.ActionLink(@customer.Name, "Detail", "Customers", new { id = @customer.Id }, null)</th>
             </tr>
         }
     </table>
