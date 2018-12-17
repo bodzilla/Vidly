@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 
@@ -20,13 +21,13 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(x => x.MembershipType).ToList();
             return View(customers);
         }
 
         public ActionResult Detail(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
+            var customer = _context.Customers.Include(x => x.MembershipType).SingleOrDefault(x => x.Id == id);
             if (customer != null) return View(customer);
             return HttpNotFound();
         }

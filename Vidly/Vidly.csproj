@@ -186,6 +186,26 @@
     <Compile Include="Migrations\201812161756455_AddAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201812161756455_AddAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812170933163_AddNameToMemershipTypes.cs" />
+    <Compile Include="Migrations\201812170933163_AddNameToMemershipTypes.Designer.cs">
+      <DependentUpon>201812170933163_AddNameToMemershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170933407_UpdateNamesForExistingMemberships.cs" />
+    <Compile Include="Migrations\201812170933407_UpdateNamesForExistingMemberships.Designer.cs">
+      <DependentUpon>201812170933407_UpdateNamesForExistingMemberships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170940091_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201812170940091_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201812170940091_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170952343_AddExtraFieldsToMovie.cs" />
+    <Compile Include="Migrations\201812170952343_AddExtraFieldsToMovie.Designer.cs">
+      <DependentUpon>201812170952343_AddExtraFieldsToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170956026_PopulateMovies.cs" />
+    <Compile Include="Migrations\201812170956026_PopulateMovies.Designer.cs">
+      <DependentUpon>201812170956026_PopulateMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -240,6 +260,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Detail.cshtml" />
+    <Content Include="Views\Movies\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -272,6 +293,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812161756455_AddAnnotationsToCustomerName.resx">
       <DependentUpon>201812161756455_AddAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170933163_AddNameToMemershipTypes.resx">
+      <DependentUpon>201812170933163_AddNameToMemershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170933407_UpdateNamesForExistingMemberships.resx">
+      <DependentUpon>201812170933407_UpdateNamesForExistingMemberships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170940091_AddBirthDateToCustomer.resx">
+      <DependentUpon>201812170940091_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170952343_AddExtraFieldsToMovie.resx">
+      <DependentUpon>201812170952343_AddExtraFieldsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170956026_PopulateMovies.resx">
+      <DependentUpon>201812170956026_PopulateMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
@@ -7,55 +7,39 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                new Movie
-                {
-                    Id = 1,
-                    Name = "Robocop"
-                },
-                new Movie
-                {
-                    Id= 2,
-                    Name = "Shrek"
-                }
-            };
+            var movies = _context.Movies.ToList();
             return View(movies);
         }
 
-        // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie
-            {
-                Id = 1,
-                Name = "Robocop"
-            };
-
-            var customers = new List<Customer>
-            {
-                new Customer
-                {
-                    Id = 1,
-                    Name = "Frank"
-                },
-                new Customer
-                {
-                    Id= 2,
-                    Name = "Alice"
-                }
-            };
-
             var viewModel = new RandomMovieViewModel
             {
-                Movie = movie,
-                Customers = customers
+                Movie = _context.Movies.First(),
+                Customers = _context.Customers.ToList()
             };
-
             return View(viewModel);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(x => x.Id == id);
+            if (movie != null) return View(movie);
+            return HttpNotFound();
         }
 
         public ActionResult Edit(int id) => Content($"id: {id}");

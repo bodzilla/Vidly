@@ -14,14 +14,14 @@ else
 {
     <table class="table-bordered table-hover" style="width: 100%">
         <tr>
-            <th style="padding: 10px">ID</th>
-            <th style="padding: 10px">Name</th>
+            <th style="padding: 10px">Movie</th>
+            <th style="padding: 10px">Genre</th>
         </tr>
         @foreach (var movie in Model)
         {
             <tr>
-                <th style="padding: 10px">@movie.Id</th>
-                <th style="padding: 10px">@movie.Name</th>
+                <th style="padding: 10px">@Html.ActionLink(movie.Name, "Detail", "Movies", new { id = movie.Id }, null)</th>
+                <th style="padding: 10px">@movie.Genre</th>
             </tr>
         }
     </table>
